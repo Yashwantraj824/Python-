@@ -1,0 +1,50 @@
+String Operations:
+# Creating a string
+name = "some name"
+
+# Convert to upper case
+upper_case_name = name.upper()
+
+# Convert to lower case
+lower_case_name = name.lower()
+
+# Capitalize the string
+capitalized_name = name.capitalize()
+
+# Replace 'e' with 'E'
+replaced_name = name.replace('e', 'E')
+
+print("Original Name:", name)
+print("Upper Case:", upper_case_name)
+print("Lower Case:", lower_case_name)
+print("Capitalized:", capitalized_name)
+print("Replaced:", replaced_name)
+
+List Operations:
+# Creating a list
+L = [1, 2, 3]
+
+# Extend the list
+L.extend([5, 6, 7])
+
+# Remove the 5th value (index 4)
+del L[4]
+
+print("Extended List:", L)
+
+Dictionary Operations:
+# Creating a dictionary
+d = {'mango': 10, 'banana': 0, 'apple': 15, 'orange': 0, 'pineapple': 20}
+
+# Remove out of stock fruits
+out_of_stock_fruits = [fruit for fruit, quantity in d.items() if quantity == 0]
+for fruit in out_of_stock_fruits:
+    d.pop(fruit)
+
+# Update mango quantity to 15
+d['mango'] = 15
+
+# Decrease pineapple quantity by 5
+d['pineapple'] -= 5
+
+print("Updated Dictionary:", d)

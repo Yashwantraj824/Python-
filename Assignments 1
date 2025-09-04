@@ -1,0 +1,32 @@
+Creating Variables with Different Naming Conventions:
+snake_case_variable = 42
+camelCaseVariable = "Hello, world!"
+PascalCaseVariable = [1, 2, 3]
+CONSTANT_VARIABLE = "This won't change"
+
+Reversing a String using Slicing:
+original_string = "Hello, world!"
+reversed_string = original_string[::-1]
+print(reversed_string)  # Outputs: "!dlrow ,olleH"
+
+Exploring dir() and Using help():
+The dir() function returns a list of names in the current local scope or a specified object's attributes. The help() function provides documentation about a particular Python object.
+
+Let's explore the attributes of the str (string) class:
+# Explore dir() and help()
+string_attributes = dir(str)
+
+# Print out the first 10 attributes
+print(string_attributes[:10])
+
+# Let's pick an attribute and use help() to learn more about it
+chosen_attribute = "upper"
+help(str.chosen_attribute)  # This won't work, we'll fix it in the next step
+
+In the above code, note that "upper" is just a string, not the actual attribute name. We need to access the attribute using getattr() to use help() effectively:
+# Correct usage of help() with getattr()
+chosen_attribute = "upper"
+attr = getattr(str, chosen_attribute)
+help(attr)
+
+Please note that not all attributes might have detailed documentation, but built-in classes like str generally have a lot of useful attributes and methods.

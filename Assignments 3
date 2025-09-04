@@ -1,0 +1,73 @@
+Replicate sum() Function:
+def custom_sum(numbers):
+    total = 0
+    for num in numbers:
+        total += num
+    return total
+
+numbers = [1, 2, 3, 4, 5]
+result = custom_sum(numbers)
+print("Custom Sum:", result)
+
+Replicate String Attributes ljust() and rjust():
+def custom_ljust(text, width, fillchar=' '):
+    if len(text) >= width:
+        return text
+    else:
+        return text + fillchar * (width - len(text))
+
+def custom_rjust(text, width, fillchar=' '):
+    if len(text) >= width:
+        return text
+    else:
+        return fillchar * (width - len(text)) + text
+
+text = "Hello"
+width = 10
+left_aligned = custom_ljust(text, width, '*')
+right_aligned = custom_rjust(text, width, '-')
+
+print("Left Justified:", left_aligned)
+print("Right Justified:", right_aligned)
+
+Functions for Palindrome, Fibonacci, and Factorials:
+def is_palindrome(s):
+    s = s.lower().replace(" ", "")
+    return s == s[::-1]
+
+def fibonacci(n):
+    fib_series = [0, 1]
+    while len(fib_series) < n:
+        fib_series.append(fib_series[-1] + fib_series[-2])
+    return fib_series
+
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+word = "racecar"
+print(f"'{word}' is a palindrome:", is_palindrome(word))
+
+n_terms = 10
+fib_sequence = fibonacci(n_terms)
+print(f"Fibonacci Sequence of {n_terms} terms:", fib_sequence)
+
+num = 5
+fact = factorial(num)
+print(f"Factorial of {num}: {fact}")
+
+Function to Generate Range of Numbers:
+def custom_range(start, stop, step=1):
+    result = []
+    current = start
+    while current < stop:
+        result.append(current)
+        current += step
+    return result
+
+start = 2
+stop = 20
+step = 3
+custom_range_result = custom_range(start, stop, step)
+print("Custom Range:", custom_range_result)

@@ -1,0 +1,82 @@
+Concatenation Examples:
+
+String Concatenation:
+first_name = "John"
+last_name = "Doe"
+full_name = first_name + " " + last_name
+print("Full Name:", full_name)
+
+List Concatenation:
+list1 = [1, 2, 3]
+list2 = [4, 5, 6]
+combined_list = list1 + list2
+print("Combined List:", combined_list)
+
+Tuple Concatenation:
+tuple1 = (10, 20)
+tuple2 = (30, 40)
+combined_tuple = tuple1 + tuple2
+print("Combined Tuple:", combined_tuple)
+
+Formatting Techniques Examples:
+
+Using f-strings:
+name = "Alice"
+age = 30
+formatted_string = f"My name is {name} and I am {age} years old."
+print(formatted_string)
+
+Using .format():
+product = "Widget"
+price = 19.99
+formatted_string = "The {} costs ${:.2f}.".format(product, price)
+print(formatted_string)
+
+Using % Formatting (Old Style):
+name = "Bob"
+score = 85
+formatted_string = "Hello, %s! Your score is %d." % (name, score)
+print(formatted_string)
+
+Arithmetic Operators Examples:
+a = 10
+b = 3
+
+addition = a + b
+subtraction = a - b
+multiplication = a * b
+division = a / b
+remainder = a % b
+exponentiation = a ** b
+
+print("Addition:", addition)
+print("Subtraction:", subtraction)
+print("Multiplication:", multiplication)
+print("Division:", division)
+print("Remainder:", remainder)
+print("Exponentiation:", exponentiation)
+
+Assignment Operators Examples:
+
+Using -=, *=, /=:
+
+x = 10
+x -= 5  # Equivalent to: x = x - 5
+print("After x -= 5:", x)
+
+y = 20
+y *= 3  # Equivalent to: y = y * 3
+print("After y *= 3:", y)
+
+z = 15
+z /= 2  # Equivalent to: z = z / 2
+print("After z /= 2:", z)
+
+Using %=, **=:
+num = 25
+num %= 7  # Equivalent to: num = num % 7
+print("After num %= 7:", num)
+
+power = 2
+power **= 3  # Equivalent to: power = power ** 3
+print("After power **= 3:", power)

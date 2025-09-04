@@ -1,0 +1,74 @@
+Single Inheritance:
+class Parent:
+    def parent_method(self):
+        print("This is the parent class method.")
+
+class Child(Parent):
+    def child_method(self):
+        print("This is the child class method.")
+
+# Creating an object of the Child class
+child_obj = Child()
+child_obj.parent_method()
+child_obj.child_method()
+
+Multiple Inheritance:
+class Parent1:
+    def method1(self):
+        print("This is method 1 from Parent1.")
+
+class Parent2:
+    def method2(self):
+        print("This is method 2 from Parent2.")
+
+class Child(Parent1, Parent2):
+    def child_method(self):
+        print("This is the child class method.")
+
+# Creating an object of the Child class
+child_obj = Child()
+child_obj.method1()
+child_obj.method2()
+child_obj.child_method()
+
+Multilevel Inheritance:
+class Grandparent:
+    def grandparent_method(self):
+        print("This is the method from Grandparent.")
+
+class Parent(Grandparent):
+    def parent_method(self):
+        print("This is the method from Parent.")
+
+class Child(Parent):
+    def child_method(self):
+        print("This is the method from Child.")
+
+# Creating an object of the Child class
+child_obj = Child()
+child_obj.grandparent_method()
+child_obj.parent_method()
+child_obj.child_method()
+
+Hierarchical Inheritance:
+class Base:
+    def base_method(self):
+        print("This is the base class method.")
+
+class Child1(Base):
+    def child1_method(self):
+        print("This is the method from Child1.")
+
+class Child2(Base):
+    def child2_method(self):
+        print("This is the method from Child2.")
+
+# Creating objects of the Child classes
+child1_obj = Child1()
+child2_obj = Child2()
+
+child1_obj.base_method()
+child1_obj.child1_method()
+
+child2_obj.base_method()
+child2_obj.child2_method()

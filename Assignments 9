@@ -1,0 +1,36 @@
+1.Create a text file and write a paragraph programmatically:
+ with open("paragraph.txt", "w") as file:
+  file.write("This is a sample paragraph written programmatically.\n")
+  file.write("It demonstrates the use of Python's file handling capabilities.\n")
+
+2.Create a CSV File with a header and relevant values:
+import csv
+
+with open("data.csv", "w", newline="") as file:
+  writer = csv.writer(file)
+  writer.writerow(["Name", "Age", "City"])
+  writer.writerow(["Alice", 30, "New York"])
+  writer.writerow(["Bob", 25, "Los Angeles"])
+
+3.Create an Excel file from from the CSV file:
+mport openpyxl
+
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+
+with open("data.csv", "r") as file:
+  reader = csv.reader(file)
+  for row in reader:
+    sheet.append(row)
+
+workbook.save("data.xlsx")
+
+4.Crop an image usin PIL:
+
+from PIL import Image
+
+image = Image.open("image.jpg")
+cropped_image = image.crop((100, 100, 200, 200))
+cropped_image.save("cropped_image.jpg")
+
+Note: download all library using pip install 

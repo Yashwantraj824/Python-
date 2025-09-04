@@ -1,0 +1,104 @@
+OS.walk() generate the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
+root : Prints out directories only from what you specified.
+dirs : Prints out sub-directories from root.
+files : Prints out all files from root and directories.
+Sample code-
+if __name__ == &quot;__main__&quot;:
+    for (root,dirs,files) in os.walk('.', topdown=True):
+        print (root)
+        print (dirs)
+        print (files)
+        print ('--------------------------------')
+
+Os.rmdir() - It's a method in Python is used to remove or delete an empty directory.
+Sample code-
+import os 
+directory = "ihritik"
+parent = "/home/User/Documents"
+path = os.path.join(parent, directory)  
+os.rmdir(path) 
+print("Directory '%s' has been removed successfully" %directory)
+
+os.remove() method in Python is used to remove or delete a file path. This method can not remove or delete a directory. If the specified path is a directory then OSError will be raised by the method. os.rmdir() can be used to remove directory.
+Sample code-
+import os 
+file = 'file.txt' 
+location = "/home/User/Documents"
+path = os.path.join(location, file) 
+os.remove(path) 
+print("%s has been removed successfully" %file) 
+
+os.scandir() method in Python is used to get an iterator of os.DirEntry objects corresponding to the entries in the directory given by the specified path. 
+Sample code-
+import os
+path = '/home/ihritik'
+obj = os.scandir(path)
+print("Files and Directories in '% s':" % path)
+for entry in obj :
+    if entry.is_dir() or entry.is_file():
+        print(entry.name)
+obj.close()
+
+OS Path module contains some useful functions on pathnames. The path parameters are either strings or bytes. These functions here are used for different purposes such as for merging, normalizing, and retrieving path names in Python. All of these functions accept either only bytes or only string objects as their parameters.
+Below are some OS Path functions by which we can do Path Manipulation in the Python OS Module:
+os.path.basename(path)
+os.path.dirname(path)
+os.path.isabs(path)
+os.path.isdir(path)
+os.path.isfile(path)
+os.path.normcase(path)
+os.path.normpath(path)
+
+Psutil is a Python cross-platform library used to access system details and process utilities. It is used to keep track of various resources utilization in the system. Usage of resources like CPU, memory, disks, network, sensors can be monitored. Hence, this library is used for system monitoring, profiling, limiting process resources, and the management of running processes. 
+CPU-
+1) psutil.cpu_times() – This function gives system CPU times as a named tuple
+import psutil
+print(psutil.cpu_times())
+
+2) psutil.cpu_percent(interval) – This function calculates the current system-wide CPU utilization as a percentage.
+import psutil
+print(psutil.cpu_percent(1))
+
+3)psutil.cpu_count(logical=True) – This function shows a number of logical CPUs in the system. The logical core is calculated as the number of physical cores multiplied by the number of threads that can run on each core. In the absence of logical core, it only counts a number of physical cores.
+import psutil
+print("Number of cores in system", psutil.cpu_count())
+print("\nNumber of physical cores in system",)
+
+4) psutil.cpu_stats() – This function gives CPU statistics as a named tuple. The statistics includes : 
+ctx_switches – number of context switches since boot.
+interrupts – number of interrupts since boot.
+soft_interrupts – number of software interrupts since boot.
+syscalls – number of system calls since boot. Always set to 0 in Ubuntu.
+import psutil
+print("CPU Statistics", psutil.cpu_stats())
+
+5) psutil.cpu_freq() – This function gives CPU frequency as a tuple that includes current, min and max frequencies expressed in Mhz.
+import psutil
+print(psutil.cpu_freq())
+
+6) psutil.getloadavg() – This function gives the average system load in last 1, 5, and 15 minutes as a tuple. The load represents the processes which are in a runnable state, either using the CPU or waiting to use the CPU
+import psutil
+print(psutil.getloadavg())
+
+MEMORY-
+1) psutil.virtual_memory() – This function gives system memory usage in bytes. The sum of used and available may or may not be equal to total. In order to get details of free physical memory this function is used.
+2) psutil.swap_memory() – This function provides details of swap memory statistics as a tuple.
+
+Disks-
+1) psutil.disk_partitions() – This function provides the details of all mounted disk partitions as a list of tuples including device, mount point and filesystem type.
+2) psutil.disk_usage(path)- This function gives disk usage statistics as a tuple for a given path. Total, used and free space are expressed in bytes, along with the percentage usage.
+
+Network-
+1) psutil.net_io_counters()- This function gives the details of network Input output statistics as a tuple.
+2) psutil.net_connections() – This function gives the list of socket connections of a system as a named tuples.
+3) psutil.net_if_addrs() – This function is used to get the addresses of each network interface card installed on the system. It is a dictionary whose keys are the Network Interface Card names and value is a list of named tuples for each address assigned to it. Each tuple includes:  
+family – the socket family, either AF_INET or AF_INET6
+address – the primary NIC address
+netmask – the netmask address
+broadcast – the broadcast address.
+ptp – “point to point” it is the destination address on a point to point interface.
+
+Sensors
+1) psutil.sensors_temperatures()- This function returns hardware temperatures of the system in celsius. Each entry is a named tuple representing a certain hardware temperature sensor. 
+2) psutil.sensors_fans() – This function gives the details of hardware fans speed expressed in RPM (rounds per minute). If sensors are not supported by the OS an empty dict is returned. 
+3) psutil.sensors_battery() – This function gives battery status information as a named tuple.

@@ -1,0 +1,46 @@
+def fibo(n):
+  """Calculates the nth Fibonacci number."""
+  if n <= 0:
+    return 0
+  elif n == 1:
+    return 1
+  else:
+    return fibo(n-1) + fibo(n-2)
+
+def palindrome(s):
+  """Checks if a string is a palindrome."""
+  return s == s[::-1]
+
+def length(s):
+  """Calculates the length of a string."""
+  return len(s)
+
+def main():
+  while True:
+    print("Choose a function:")
+    print("1. Fibonacci")
+    print("2. Palindrome")
+    print("3. Length")
+    print("4. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+      n = int(input("Enter the number for Fibonacci: "))
+      print("Fibonacci number:", fibo(n))
+    elif choice == 2:
+      s = input("Enter a string: ")
+      if palindrome(s):
+        print("It's a palindrome!")
+      else:
+        print("It's not a palindrome.")
+    elif choice == 3:
+      s = input("Enter a string: ")
+      print("Length:", length(s))
+    elif choice == 4:
+      break
+    else:
+      print("Invalid choice. Please try again.")
+
+if _name_ == "_main_":
+  main()

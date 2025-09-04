@@ -1,0 +1,38 @@
+import random
+
+def generate_number():
+    return str(random.randint(1000, 9999))
+
+def count_cows_and_bulls(secret_number, guess):
+    cows = 0
+    bulls = 0
+    for i in range(4):
+        if guess[i] == secret_number[i]:
+            cows += 1
+        elif guess[i] in secret_number:
+            bulls += 1
+    return cows, bulls
+
+def main():
+    secret_number = generate_number()
+    guesses = 0
+    print("Welcome to the Cows and Bulls Game!")
+    
+    while True:
+        user_guess = input("Enter a 4-digit number: ")
+        
+        if len(user_guess) != 4 or not user_guess.isdigit():
+            print("Please enter a valid 4-digit number.")
+            continue
+        
+        guesses += 1
+        cows, bulls = count_cows_and_bulls(secret_number, user_guess)
+        
+        if cows == 4:
+            print(f"Congratulations! You've guessed the correct number {secret_number} in {guesses} guesses.")
+            break
+        else:
+            print(f"{cows} cows, {bulls} bulls")
+
+if _name_ == "_main_":
+    main()
