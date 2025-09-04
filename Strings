@@ -1,0 +1,78 @@
+String -Text is a string data type. 
+Any data type written as text is a string. Any data under single, double or triple quote are strings. 
+There are different string methods and built-in functions to deal with string data types. To check the length of a string use the len() method.
+
+Creating a string -
+letter = 'P'               
+print(letter)               
+print(len(letter))          
+greeting = 'Hello, World!'  
+print(len(greeting))        
+sentence = "I hope you are enjoying 30 days of Python Challenge"
+print(sentence)
+
+Multi string -
+multiline_string = '''I am a teacher and enjoy teaching.
+I didn't find anything as rewarding as empowering people.
+That is why I created 30 days of python.'''
+print(multiline_string)
+
+# Another way of doing the same thing
+multiline_string = """I am a teacher and enjoy teaching.
+I didn't find anything as rewarding as empowering people.
+That is why I created 30 days of python."""
+print(multiline_string)
+
+New fromatting of string - 
+
+first_name = 'Asabeneh'
+last_name = 'Yetayeh'
+language = 'Python'
+formated_string = 'I am {} {}. I teach {}'.format(first_name, last_name, language)
+print(formated_string)
+a = 4
+b = 3
+
+print('{} + {} = {}'.format(a, b, a + b))
+print('{} - {} = {}'.format(a, b, a - b))
+print('{} * {} = {}'.format(a, b, a * b))
+print('{} / {} = {:.2f}'.format(a, b, a / b)) # limits it to two digits after decimal
+print('{} % {} = {}'.format(a, b, a % b))
+print('{} // {} = {}'.format(a, b, a // b))
+print('{} ** {} = {}'.format(a, b, a ** b))
+
+# output
+4 + 3 = 7
+4 - 3 = 1
+4 * 3 = 12
+4 / 3 = 1.33
+4 % 3 = 1
+4 // 3 = 1
+4 ** 3 = 64
+radius = 10
+pi = 3.14
+area = pi * radius ** 2
+formated_string = 'The area of a circle with a radius {} is {:.2f}.'.format(radius, area) # 2 digits after decimal
+print(formated_string)
+
+Slicing an string-
+
+language = 'Python'
+first_three = language[0:3] # starts at zero index and up to 3 but not include 3
+print(first_three) #Pyt
+last_three = language[3:6]
+print(last_three) # hon
+# Another way
+last_three = language[-3:]
+print(last_three)   # hon
+last_three = language[3:]
+print(last_three)   
+
+Reversing a String- 
+greeting = 'Hello, World!'
+print(greeting[::-1]) # !dlroW ,olleH
+
+Skipping Characters While Slicing - 
+language = 'Python'
+pto = language[0:6:2] #
+print(pto) # Pto
